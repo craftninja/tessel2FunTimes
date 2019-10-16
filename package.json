@@ -1,0 +1,10 @@
+{
+  "name": "tessel2FunTimes",
+  "version": "1.0.0",
+  "description": "Learning and playing with the Tessel 2",
+  "main": "app.js",
+  "repository": "git://github.com/craftninja/tessel2FunTimes.git",
+  "author": "Emily Platzer <emilyplatzer@gmail.com>",
+  "license": "MIT",
+  "scripts": { },
+}
