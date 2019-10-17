@@ -1,15 +1,14 @@
 'use strict';
 
-// Import the interface to Tessel hardware
 const tessel = require('tessel');
 
-// Turn one of the LEDs on to start.
-tessel.led[2].on();
+const ledPin = tessel.port.B.pin[7]
+const photoresistorPin = tessel.port.A.pin[4]
 
-// Blink!
 setInterval(() => {
-  tessel.led[2].toggle();
-  tessel.led[3].toggle();
+  photoresistorPin.analogRead((error, lightIntensity) => {
+    ledPin.analogWrite(1 - lightIntensity);
+  });
 }, 100);
 
-console.log("I'm blinking! (Press CTRL + C to stop)");
+console.log("I'm doing the thing! (Press CTRL + C to stop)");
